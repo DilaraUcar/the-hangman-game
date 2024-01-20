@@ -24,19 +24,18 @@ def get_word():
         
     return random.choice(words)
 
-def display_word(word, guessed_letters):
+def display_word( word_to_guess, guessed_letters):
     """
     Creates a display string for the word, 
     replacing unguessed letters with underscores.
     """
     display = ""
-    for letter in word:
+    for letter in  word_to_guess:
         if letter in guessed_letters:
             display += letter
         else:
             display += "_"
     return display
-display_word(word, guessed_letters)
 
 def draw_hangman(incorrect_attempts):
     """
@@ -147,7 +146,7 @@ def draw_hangman(incorrect_attempts):
 
 def hangman():
     """
-    Play the hangman game.
+    Play the Hangman game.
     """
     word_to_guess = get_word()
     guessed_letters = []
@@ -155,3 +154,38 @@ def hangman():
     max_attempts = 6
 
     print("Welcome to Hangman!")
+
+    while incorrect_attempts < max_attempts:
+        current_display = display_word(guessed_letters, word_to_guess)
+        print("Word: ", current_display)
+        print("Guessed letters: ", guessed_letters)
+
+        guess = input("Guess a letter: ").lower()
+
+        if len(guess) != 1 or not guess.isalpha():
+            print("Please enter a single letter.")
+            continue
+
+        if guess in guessed_letters:
+            print("You already guessed that letter. Try again.")
+            continue
+
+        guessed_letters.append(guess)
+
+        if guess not in word_to_guess.lower():
+            incorrect_attempts += 1
+            draw_hangman(incorrect_attempts)
+            print("Incorrect! Attempts remaining:", max_attempts - incorrect_attempts)
+        else:
+            print("Correct guess!")
+
+        if set(guessed_letters) >= set(word_to_guess.lower()):
+            print("Congratulations! You guessed the word:", word_to_guess)
+            break
+
+    if incorrect_attempts == max_attempts:
+        print("Sorry, you ran out of attempts. The word was:", word_to_guess)
+
+
+if __name__ == "__main__":
+    hangman()
