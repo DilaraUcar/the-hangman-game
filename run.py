@@ -158,9 +158,10 @@ def hangman():
     while incorrect_attempts < max_attempts:
         current_display = display_word(guessed_letters, word_to_guess)
         print("Word: ", current_display)
-        print("Guessed letters: ", guessed_letters)
-
-        guess = input("Guess a letter: ").lower()
+        incorrect_letters = [letter for letter in guessed_letters if letter not in word_to_guess.lower()]
+        print("Incorrect letters:", ', '.join(incorrect_letters))
+        
+        guess = input("Please guess a letter:\n").lower()
 
         if len(guess) != 1 or not guess.isalpha():
             print("Please enter a single letter.")
