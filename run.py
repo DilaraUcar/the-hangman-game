@@ -144,3 +144,14 @@ def draw_hangman(incorrect_attempts):
     ]
 
     print(hangman_graphics[incorrect_attempts])
+
+def hangman():
+    """
+    Play the hangman game.
+    """
+    word_to_guess = get_word()
+    guessed_letters = []
+    incorrect_attempts = 0
+    max_attempts = 6
+
+    print("Welcome to Hangman!")
