@@ -24,18 +24,19 @@ def get_word():
         
     return random.choice(words)
 
-def display_word( word_to_guess, guessed_letters):
+def display_word(word_to_guess, guessed_letters):
     """
     Creates a display string for the word, 
     replacing unguessed letters with underscores.
     """
     display = ""
-    for letter in  word_to_guess:
-        if letter in guessed_letters:
-            display += letter
+    for letter in word_to_guess:
+        if letter.lower() in guessed_letters or not letter.isalpha():
+            display += letter + " "
         else:
-            display += "_"
-    return display
+            display += "_ "
+
+    return display.strip()
 
 def draw_hangman(incorrect_attempts):
     """
