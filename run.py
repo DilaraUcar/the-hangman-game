@@ -32,11 +32,11 @@ def display_word(word_to_guess, guessed_letters):
     display = ""
     for letter in word_to_guess:
         if letter.lower() in guessed_letters or not letter.isalpha():
-            display += letter + " "
+            display += letter
         else:
-            display += "_ "
+            display += "_"
 
-    return display.strip()
+    return ' '.join(display)
 
 def draw_hangman(incorrect_attempts):
     """
