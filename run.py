@@ -22,15 +22,17 @@ def get_word():
         "Hamster"
         ]
         
-    return random.choice(words)
+    return random.choice(words).upper()
 
 def display_word(word_to_guess, guessed_letters):
     """
     Creates a display string for the word, 
     replacing unguessed letters with underscores.
     """
+    # display = "_"
+    # display ="_"
     display = ""
-    for letter in word_to_guess:
+    for letter in lowerto_guess:
         if letter.lower() in guessed_letters or not letter.isalpha():
             display += letter
         else:
@@ -157,12 +159,12 @@ def hangman():
     print("Welcome to Hangman!")
 
     while incorrect_attempts < max_attempts:
-        current_display = display_word(guessed_letters, word_to_guess)
+        current_display = display_word(word_to_guess, guessed_letters)
         print("Word: ", current_display)
         incorrect_letters = [letter for letter in guessed_letters if letter not in word_to_guess.lower()]
         print("Incorrect letters:", ', '.join(incorrect_letters))
-        
-        guess = input("Please guess a letter:\n").lower()
+        guess = input("Please guess a letter:\n").upper()
+        upperupper()        guess = input("Please guess a letter:\n").lower()
 
         if len(guess) != 1 or not guess.isalpha():
             print("Please enter a single letter.")
