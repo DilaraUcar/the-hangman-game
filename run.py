@@ -34,7 +34,7 @@ def display_word(word_to_guess, guessed_letters):
         if letter.lower() in guessed_letters or not letter.isalpha():
             display += letter
         else:
-            display += ""
+            display += "_"
 
     return ' '.join(display)
 
@@ -43,104 +43,83 @@ def draw_hangman(incorrect_attempts):
     Display hangman graphics based on incorrect attempts.
     """
     hangman_graphics = [
-        # 0 incorrect attempts:
-        """
-        -------
-        |   |
-        |
-        |
-        |
-        |
-        |
-        |
-        |
-        |
-        -------
-        """,
-        # 1 incorrect attempt:
-        """
-        -------
-        |   |
-        |   O
-        |
-        |
-        |
-        |
-        |
-        |
-        |
-        -------
-        """,
-        # 2 incorrect attempts:
-        """
-        -------
-        |   |
-        |   O
-        |  ---
-        |   |
-        |   |
-        |
-        |
-        |
-        |
-        -------
-        """,
-        # 3 incorrect attempts:
-        """
-        -------
-        |   |
-        |   O
-        |  ---
-        | / |
-        |   |
-        |
-        |
-        |
-        |
-        -------
-        """,
-        # 4 incorrect attempts:
-        """
-        -------
-        |   |
-        |   O
-        |  ---
-        | / | \
-        |   |
-        |
-        |
-        |
-        |
-        -------
-        """,
-        # 5 incorrect attempts:
-        """
-        -------
-        |   |
-        |   O
-        |  ---
-        | / | \
-        |   |
-        |  ---
-        | /
-        |
-        |
-        -------
-        """,
-        # 6 incorrect attempts:
-        """
-        -------
-        |   |
-        |   O
-        |  ---
-        | / | \
-        |   |
-        |  ---
-        | /   \
-        |
-        |
-        -------
-        """
+        r"""
+-------
+|    |
+|
+|
+|
+|
+|
+|  
+----------
+""",
+        r"""
+-------
+|    |
+|    O
+|
+|
+|
+|
+|  
+----------
+""",
+        r"""
+-------
+|    |
+|    O
+|   ---
+|    |
+|    |
+|
+|  
+----------
+""",
+        r"""
+-------
+|    |
+|    O
+|   ---
+|  / |
+|    |
+|
+|  
+----------
+""",
+        r"""
+-------
+|    |
+|    O
+|   ---
+|  / | \
+|    |
+|
+|  
+----------
+""",
+        r"""
+-------
+|    |
+|    O
+|   ---
+|  / | \
+|    |
+|   ---
+|  /
+----------
+""",
+        r"""
+-------
+|    |
+|    O
+|   ---
+|  / | \
+|    |
+|   ---
+|  /   \
+----------
+""",
     ]
 
     print(hangman_graphics[incorrect_attempts])
@@ -162,8 +141,7 @@ def hangman():
         incorrect_letters = [letter for letter in guessed_letters if letter not in word_to_guess.lower()]
         print("Incorrect letters:", ', '.join(incorrect_letters))
         
-        user_input = input("Please guess a letter:\n")
-        guess = user_input.upper()
+        guess = input("Please guess a letter:\n").upper()
 
         if len(guess) != 1 or not guess.isalpha():
             print("Please enter a single letter.")
