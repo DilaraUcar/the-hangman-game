@@ -59,16 +59,29 @@ def hangman():
     incorrect_attempts = 0
     max_attempts = 6
 
-    player_name = input("Please enter your name:\n")
-    print(f"Welcome to Hangman, {player_name}!")
+    player_name = input("Please enter your name:\n").upper()
+    print(f"HELLO {player_name}, WELCOME TO HANGMAN!\n")
+
+    # Display rules on how to play
+    print("HOW TO PLAY:\n")
+    print("1. Guess letters to uncover the secret word.")
+    print("2. You have a maximum of 6 incorrect attempts.")
+    print("3. If you guess the word or run out of attempts, the game ends.\n")
 
     while incorrect_attempts < max_attempts:
         current_display = display_word(word_to_guess, guessed_letters)
-        print("Word: ", current_display)
+        print(current_display)
+
+        # Add space between current_display and incorrect attempts
+        print()
+
         # Find the set of incorrect letters by subtracting the set of uppercase letters
         # in the guessed letters from the set of uppercase letters in the target word.
         incorrect_letters = {letter for letter in guessed_letters} - set(word_to_guess.upper())
         print("Incorrect letters:", ', '.join(incorrect_letters))
+
+        # Add space between incorrect letters and guess a letter
+        print()
         
         guess = input("Guess a letter:\n").upper().strip()
 
@@ -85,7 +98,7 @@ def hangman():
         if guess.upper() not in word_to_guess.upper():
             incorrect_attempts += 1
             draw_hangman(incorrect_attempts)
-            print(f"Incorrect! You have {max_attempts - incorrect_attempts} attempts remaining")
+            print(f"Incorrect! You have {max_attempts - incorrect_attempts} attempts remaining\n")
         else:
             draw_hangman(incorrect_attempts)
             print("Correct guess!")
@@ -99,13 +112,17 @@ def hangman():
         print(game_over)
         print(f"Sorry, {player_name}, you ran out of attempts. The word was:", word_to_guess)
 
+        # Adds a line of space
+        print()
 
+        
 def play_again():
     """
-    Ask the user if they want to play again.
+    Ask the user if they want to play again, with a while loop that continues the game
+    if the user wants to play again until they enter 'n'.
     """
     while True:
-        response = input("Do you want to play again? (Y/N): ").strip().lower()
+        response = input("Do you want to play again? (Y/N):\n").strip().lower()
         if response == 'y':
             return True
         elif response == 'n':
