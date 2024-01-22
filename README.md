@@ -3,6 +3,8 @@ The Hangman is a Python terminal based game, which runs in Code Institute mock t
 
 A user can beat the game by trying to guess the correct word by following the game rules before they run out of attempts. Each incorrect answer adds to the hangman.
 
+The live game can be found [here](https://the-hangman-game-p3-63bab5abcbcf.herokuapp.com/)
+
 ![Mockup](docs/mockup.jpeg)
 
 ## How to play
@@ -42,7 +44,21 @@ If the user chooses to play again they are then redirected to enter a name again
 - Have a difficulity option where the player can choose what level of difficulity they desire.
 
 ## Testing
+I have manually tested this project by doing the following:
+- Giging invalid inputs to make sure the input validation is working correctly.
+- Tested in my gitpod terminal and also in the Code Institute Heroku terminal
+- Passed the code through a [PEP8 Python Validator.](https://pep8ci.herokuapp.com/#)
+
+### Bugs
+#### Solved Bugs
+- I had trouble with the ASCII art showing up weird in console. I fixed this by using Raw Strings consisting of an 'r' before the opening quote. I found this problem solver in [this website](https://realpython.com/python-hangman/#step-5-draw-the-hanged-man).
+
+- I had problems with adding space between two strings. In those cases i added print statements between and that fixed the problem.
+
+#### Unsolved Bugs
+- No unsolved bugs remaining.
 
 ## Deployment
+
 
 ## Credits
