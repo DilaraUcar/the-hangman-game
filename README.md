@@ -59,6 +59,15 @@ I have manually tested this project by doing the following:
 - No unsolved bugs remaining.
 
 ## Deployment
+Steps taken to deploy project to Heroku:
+- Commit and push all code to GitHub from GitPod.
+- Create an [Heroku](https://heroku.com) account.
+- Press on Create New App.
+- Add name to your app and choose your region.
+- Navigate to settings and add Conf Vars PORT 8000 and Buildpacks Python and Node.js.
+- Navigate to deploy on the top of the page and search github repo and the connect.
+- Then at the bottom deploy from branch and wait for everything to load.
+- Open live page and made sure no errors occured.
 
 
 ## Credits
