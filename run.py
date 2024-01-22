@@ -59,7 +59,7 @@ def hangman():
     incorrect_attempts = 0
     max_attempts = 6
 
-    player_name = input("Please enter your name: ")
+    player_name = input("Please enter your name:\n")
     print(f"Welcome to Hangman, {player_name}!")
 
     while incorrect_attempts < max_attempts:
@@ -85,7 +85,7 @@ def hangman():
         if guess.upper() not in word_to_guess.upper():
             incorrect_attempts += 1
             draw_hangman(incorrect_attempts)
-            print("Incorrect! Attempts remaining:", max_attempts - incorrect_attempts)
+            print(f"Incorrect! You have {max_attempts - incorrect_attempts} attempts remaining")
         else:
             print("Correct guess!")
 
@@ -97,7 +97,16 @@ def hangman():
     if incorrect_attempts == max_attempts:
         print(game_over)
         print(f"Sorry, {player_name}, you ran out of attempts. The word was:", word_to_guess)
-
+    
+def play_again():
+    """
+    Ask the user if they want to play again.
+    """
+    return input("Do you want to play again? (Y/N): ").strip().lower() == 'y'
 
 if __name__ == "__main__":
-    hangman()
+    while True:
+        hangman()
+        if not play_again():
+            print("Thanks for playing! Goodbye.")
+            break
