@@ -141,7 +141,7 @@ def hangman():
         incorrect_letters = [letter for letter in guessed_letters if letter.upper() not in word_to_guess.upper()]
         print("Incorrect letters:", ', '.join(incorrect_letters))
         
-        guess = input("Please guess a letter:\n").upper()
+        guess = input("Please guess a letter:\n").upper().strip()
 
         if len(guess) != 1 or not guess.isalpha():
             print("Please enter a single letter.")
