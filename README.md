@@ -81,6 +81,8 @@ Steps taken to deploy project to Heroku:
 - Then at the bottom deploy from branch and wait for everything to load.
 - Open live page and made sure no errors occured.
 
+The live game can be viewed [here.](https://the-hangman-game-p3-63bab5abcbcf.herokuapp.com/)
+
 
 ## CREDITS
 - All the content in the game is my own, but I used Google to find information about hangman game and to generate a list of animal words.
