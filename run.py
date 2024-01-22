@@ -49,9 +49,27 @@ def draw_hangman(incorrect_attempts):
     print(hangman_graphics[incorrect_attempts])
 
 
+def validate_guess(guessed_letters):
+    """
+    Validate the user's letter input.
+    Returns a letter or none if the input is invalid.
+    """
+    guess = input("Guess a letter:\n").upper().strip()
+
+    if len(guess) != 1 or not guess.isalpha():
+        print("Please enter a single letter.")
+        return None
+
+    if guess in guessed_letters:
+        print("You already guessed that letter. Try again.")
+        return None
+
+    return guess
+
+
 def hangman():
     """
-    Play the Hangman game.
+    The Hangman game logic.
     """
     print(logo)
     word_to_guess = get_word()
@@ -84,14 +102,9 @@ def hangman():
         # Add space between incorrect letters and guess a letter
         print()
         
-        guess = input("Guess a letter:\n").upper().strip()
+        guess = validate_guess(guessed_letters)
 
-        if len(guess) != 1 or not guess.isalpha():
-            print("Please enter a single letter.")
-            continue
-
-        if guess in guessed_letters:
-            print("You already guessed that letter. Try again.")
+        if guess is None:
             continue
 
         guessed_letters.append(guess)
