@@ -64,9 +64,10 @@ def hangman():
 
     # Display rules on how to play
     print("HOW TO PLAY:\n")
-    print("1. Guess letters to uncover the secret word.")
-    print("2. You have a maximum of 6 incorrect attempts.")
-    print("3. If you guess the word or run out of attempts, the game ends.\n")
+    print("1. The theme is Animals")
+    print("2. Guess letters to uncover the secret word.")
+    print("3. You have a maximum of 6 incorrect attempts.")
+    print("4. If you guess the word or run out of attempts, the game ends.\n")
 
     while incorrect_attempts < max_attempts:
         current_display = display_word(word_to_guess, guessed_letters)
@@ -115,7 +116,7 @@ def hangman():
         # Adds a line of space
         print()
 
-        
+
 def play_again():
     """
     Ask the user if they want to play again, with a while loop that continues the game
