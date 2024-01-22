@@ -1,5 +1,6 @@
 import random
 
+
 def get_word():
     """
     Get a random word from the words list
@@ -24,6 +25,7 @@ def get_word():
         
     return random.choice(words).upper()
 
+
 def display_word(word_to_guess, guessed_letters):
     """
     Creates a display string for the word, 
@@ -36,7 +38,9 @@ def display_word(word_to_guess, guessed_letters):
         else:
             display += "_"
 
+    # Join the characters in the 'display' string with spaces in between.
     return ' '.join(display)
+
 
 def draw_hangman(incorrect_attempts):
     """
@@ -124,6 +128,7 @@ def draw_hangman(incorrect_attempts):
 
     print(hangman_graphics[incorrect_attempts])
 
+
 def hangman():
     """
     Play the Hangman game.
@@ -138,7 +143,9 @@ def hangman():
     while incorrect_attempts < max_attempts:
         current_display = display_word(word_to_guess, guessed_letters)
         print("Word: ", current_display)
-        incorrect_letters = [letter for letter in guessed_letters if letter.upper() not in word_to_guess.upper()]
+        # Find the set of incorrect letters by subtracting the set of uppercase letters
+        # in the guessed letters from the set of uppercase letters in the target word.
+        incorrect_letters = {letter for letter in guessed_letters} - set(word_to_guess.upper())
         print("Incorrect letters:", ', '.join(incorrect_letters))
         
         guess = input("Please guess a letter:\n").upper().strip()
