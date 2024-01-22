@@ -99,3 +99,5 @@ The live game can be viewed [here.](https://the-hangman-game-p3-63bab5abcbcf.her
 - [Real Python](https://realpython.com/python-hangman/#step-5-draw-the-hanged-man) - to get an understanding of how to build hangman game.
 - [W3Schools - Python](https://www.w3schools.com/python/) - for information about python.
 - [YouTube](https://www.youtube.com) - to search for python art and hangman game examples.
+
+I want to give a special thankyou to my mentor Spencer Barriball who has helped me through this journey.
