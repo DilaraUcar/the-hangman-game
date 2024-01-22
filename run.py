@@ -76,7 +76,7 @@ def hangman():
     guessed_letters = []
     incorrect_attempts = 0
     max_attempts = 6
-    
+
     while True:
         player_name = input("Please enter your name:\n").upper().strip()
         if player_name.isalpha():
@@ -138,6 +138,7 @@ def hangman():
 
         # Adds a line of space
         print()
+
 
 def play_again():
     """
