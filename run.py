@@ -1,5 +1,5 @@
 import random
-
+from game_art import hangman_graphics, logo, game_over, you_win
 
 def get_word():
     """
@@ -46,86 +46,6 @@ def draw_hangman(incorrect_attempts):
     """
     Display hangman graphics based on incorrect attempts.
     """
-    hangman_graphics = [
-        r"""
--------
-|    |
-|
-|
-|
-|
-|
-|  
-----------
-""",
-        r"""
--------
-|    |
-|    O
-|
-|
-|
-|
-|  
-----------
-""",
-        r"""
--------
-|    |
-|    O
-|   ---
-|    |
-|    |
-|
-|  
-----------
-""",
-        r"""
--------
-|    |
-|    O
-|   ---
-|  / |
-|    |
-|
-|  
-----------
-""",
-        r"""
--------
-|    |
-|    O
-|   ---
-|  / | \
-|    |
-|
-|  
-----------
-""",
-        r"""
--------
-|    |
-|    O
-|   ---
-|  / | \
-|    |
-|   ---
-|  /
-----------
-""",
-        r"""
--------
-|    |
-|    O
-|   ---
-|  / | \
-|    |
-|   ---
-|  /   \
-----------
-""",
-    ]
-
     print(hangman_graphics[incorrect_attempts])
 
 
@@ -133,6 +53,7 @@ def hangman():
     """
     Play the Hangman game.
     """
+    print(logo)
     word_to_guess = get_word()
     guessed_letters = []
     incorrect_attempts = 0
@@ -149,7 +70,7 @@ def hangman():
         incorrect_letters = {letter for letter in guessed_letters} - set(word_to_guess.upper())
         print("Incorrect letters:", ', '.join(incorrect_letters))
         
-        guess = input("Please guess a letter:\n").upper().strip()
+        guess = input("Guess a letter:\n").upper().strip()
 
         if len(guess) != 1 or not guess.isalpha():
             print("Please enter a single letter.")
@@ -169,10 +90,12 @@ def hangman():
             print("Correct guess!")
 
         if set(guessed_letters) >= set(word_to_guess.upper()):
+            print(you_win)
             print(f"Congratulations, {player_name}! You guessed correrct:", word_to_guess)
             break
 
     if incorrect_attempts == max_attempts:
+        print(game_over)
         print(f"Sorry, {player_name}, you ran out of attempts. The word was:", word_to_guess)
 
 
