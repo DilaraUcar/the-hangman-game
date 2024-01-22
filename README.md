@@ -20,7 +20,9 @@ The live game can be found [here](https://the-hangman-game-p3-63bab5abcbcf.herok
   - [Media](#media)
 
 ## HOW TO PLAY
-In this version of the Hangman game, the user needs to put in there name and the game is then generated with a welcome message. 
+
+![input-name-validation](docs/name-valid.jpeg)
+In this version of the Hangman game, the user needs to put in their name and the game is then generated with a welcome message. 
 
 ![starts game](docs/welcome.jpeg)
 
@@ -74,7 +76,7 @@ I have manually tested this project by doing the following:
 Steps taken to deploy project to Heroku:
 - Commit and push all code to GitHub from GitPod.
 - Create an [Heroku](https://heroku.com) account.
-- Press on Create New App.
+- Click on Create New App.
 - Add name to your app and choose your region.
 - Navigate to settings and add Conf Vars PORT 8000 and Buildpacks Python and Node.js.
 - Navigate to deploy on the top of the page and search github repo and the connect.
