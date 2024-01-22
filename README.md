@@ -46,7 +46,7 @@ If the user chooses to play again they are then redirected to enter a name again
 ## FEATURES
 - The computer ramdomly selects a word from the words list. The player cannot see this word but is instead presented with underscores for the amount of letters there is in the selected word, and the correct letter inputs.
 
-- The computer accepts user input and gives responsive feedback with input validation and handles error.
+- The computer accepts user input and gives responsive feedback with input validation and handles error on all inputs.
 
 - User cannot enter a number, more than one letter, or the same letter twice and will be presented with a responsive feedaback message.
 
@@ -61,7 +61,7 @@ If the user chooses to play again they are then redirected to enter a name again
 I have manually tested this project by doing the following:
 - Giging invalid inputs to make sure the input validation is working correctly.
 - Tested in my gitpod terminal and also in the Code Institute Heroku terminal
-- Passed the code through a [PEP8 Python Validator.](https://pep8ci.herokuapp.com/#)
+- Passed the code through a [PEP8 Python Validator.](https://pep8ci.herokuapp.com/#) All code have been appropietly corrected and is now passing through the validator with no problems.
 
 ### Bugs
 #### Solved Bugs
