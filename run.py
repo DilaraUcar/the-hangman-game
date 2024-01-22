@@ -76,8 +76,14 @@ def hangman():
     guessed_letters = []
     incorrect_attempts = 0
     max_attempts = 6
+    
+    while True:
+        player_name = input("Please enter your name:\n").upper().strip()
+        if player_name.isalpha():
+            break
+        else:
+            print("Please enter a valid name.\n")
 
-    player_name = input("Please enter your name:\n").upper()
     print(f"HELLO {player_name}, WELCOME TO HANGMAN!\n")
 
     # Display rules on how to play
@@ -94,11 +100,11 @@ def hangman():
         # Add space between current_display and incorrect attempts
         print()
 
-        # Find the set of incorrect letters by subtracting 
+        # Find the set of incorrect letters by subtracting
         # the set of uppercase letters
-        # in the guessed letters from the set of uppercase 
+        # in the guessed letters from the set of uppercase
         # letters in the target word.
-        incorrect_letters = {letter for letter in guessed_letters} - set(word_to_guess.upper())
+        incorrect_letters = set(guessed_letters) - set(word_to_guess.upper())
         print("Incorrect letters:", ', '.join(incorrect_letters))
 
         # Add space between incorrect letters and guess a letter
@@ -114,23 +120,24 @@ def hangman():
         if guess.upper() not in word_to_guess.upper():
             incorrect_attempts += 1
             draw_hangman(incorrect_attempts)
-            print(f"Incorrect! You have {max_attempts - incorrect_attempts} attempts remaining\n")
+            print(f"Incorrect! You have {max_attempts - incorrect_attempts}")
+            print(f" attempts remaining\n")
         else:
             draw_hangman(incorrect_attempts)
             print("Correct guess!")
 
         if set(guessed_letters) >= set(word_to_guess.upper()):
             print(you_win)
-            print(f"Congratulations, {player_name}! You guessed correrct:", word_to_guess)
+            print(f"Congratulations, {player_name}!")
+            print("You guessed correrct:", word_to_guess)
             break
 
     if incorrect_attempts == max_attempts:
         print(game_over)
-        print(f"Sorry, {player_name}, you ran out of attempts. The word was:", word_to_guess)
+        print(f"Sorry {player_name}, the word was:", word_to_guess)
 
         # Adds a line of space
         print()
-
 
 def play_again():
     """
