@@ -31,7 +31,7 @@ def display_word(word_to_guess, guessed_letters):
     """
     display = ""
     for letter in word_to_guess:
-        if letter.lower() in guessed_letters or not letter.isalpha():
+        if letter.upper() in guessed_letters or not letter.isalpha():
             display += letter
         else:
             display += "_"
@@ -138,7 +138,7 @@ def hangman():
     while incorrect_attempts < max_attempts:
         current_display = display_word(word_to_guess, guessed_letters)
         print("Word: ", current_display)
-        incorrect_letters = [letter for letter in guessed_letters if letter not in word_to_guess.lower()]
+        incorrect_letters = [letter for letter in guessed_letters if letter.upper() not in word_to_guess.upper()]
         print("Incorrect letters:", ', '.join(incorrect_letters))
         
         guess = input("Please guess a letter:\n").upper()
@@ -153,14 +153,14 @@ def hangman():
 
         guessed_letters.append(guess)
 
-        if guess not in word_to_guess.lower():
+        if guess.upper() not in word_to_guess.upper():
             incorrect_attempts += 1
             draw_hangman(incorrect_attempts)
             print("Incorrect! Attempts remaining:", max_attempts - incorrect_attempts)
         else:
             print("Correct guess!")
 
-        if set(guessed_letters) >= set(word_to_guess.lower()):
+        if set(guessed_letters) >= set(word_to_guess.upper()):
             print("Congratulations! You guessed the word:", word_to_guess)
             break
 
