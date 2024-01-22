@@ -71,3 +71,13 @@ Steps taken to deploy project to Heroku:
 
 
 ## Credits
+- All the content in the game is my own, but I used Google to find information about hangman game and to generate a list of animal words.
+
+- The template for the deployable application was provided by [Code Institute - Template.](https://github.com/Code-Institute-Org/p3-template)
+
+### Media
+- [ASCII Art Generator](https://patorjk.com/software/taag/#p=display&v=0&f=Big&t=The%20Hangman) - Logo art.
+- [ASCII Art Generator](https://patorjk.com/software/taag/#p=display&f=ANSI%20Regular&t=GAME%20OVER!) - Game Over art.
+- [ASCII Art Generator](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=YOU%20WIN!) - You Win art.
+- [Real Python](https://realpython.com/python-hangman/#step-5-draw-the-hanged-man) - to get an understanding of how to build hangman game.
+- [W3Schools - Python](https://www.w3schools.com/python/) - for information about python.
