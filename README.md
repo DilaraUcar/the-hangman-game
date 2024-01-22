@@ -7,7 +7,19 @@ The live game can be found [here](https://the-hangman-game-p3-63bab5abcbcf.herok
 
 ![Mockup](docs/mockup.jpeg)
 
-## How to play
+## CONTENTS
+- [How To Play](#how-to-play)
+- [Features](#features)
+  - [Future Features](#future-features)
+- [Testing](#testing)
+  - [Bugs](#bugs)
+    - [Solved Bugs](#solved-bugs)
+    - [Unsolved Bugs](#unsolved-bugs)
+- [Deployment](#deployment)
+- [Credits](#credits)
+  - [Media](#media)
+
+## HOW TO PLAY
 In this version of the Hangman game, the user needs to put in there name and the game is then generated with a welcome message. 
 
 ![starts game](docs/welcome.jpeg)
@@ -29,7 +41,7 @@ If the user chooses to play again they are then redirected to enter a name again
 
 ![play-again](docs/restart.jpeg)
 
-## Features
+## FEATURES
 - The computer ramdomly selects a word from the words list. The player cannot see this word but is instead presented with underscores for the amount of letters there is in the selected word, and the correct letter inputs.
 
 - The computer accepts user input and gives responsive feedback with input validation and handles error.
@@ -43,7 +55,7 @@ If the user chooses to play again they are then redirected to enter a name again
 
 - Have a difficulity option where the player can choose what level of difficulity they desire.
 
-## Testing
+## TESTING
 I have manually tested this project by doing the following:
 - Giging invalid inputs to make sure the input validation is working correctly.
 - Tested in my gitpod terminal and also in the Code Institute Heroku terminal
@@ -58,7 +70,7 @@ I have manually tested this project by doing the following:
 #### Unsolved Bugs
 - No unsolved bugs remaining.
 
-## Deployment
+## DEPLOYMENT
 Steps taken to deploy project to Heroku:
 - Commit and push all code to GitHub from GitPod.
 - Create an [Heroku](https://heroku.com) account.
@@ -70,7 +82,7 @@ Steps taken to deploy project to Heroku:
 - Open live page and made sure no errors occured.
 
 
-## Credits
+## CREDITS
 - All the content in the game is my own, but I used Google to find information about hangman game and to generate a list of animal words.
 
 - The template for the deployable application was provided by [Code Institute - Template.](https://github.com/Code-Institute-Org/p3-template)
