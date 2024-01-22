@@ -28,7 +28,7 @@ def get_word():
 
 def display_word(word_to_guess, guessed_letters):
     """
-    Creates a display string for the word, 
+    Creates a display string for the word,
     replacing unguessed letters with underscores.
     """
     display = ""
@@ -138,7 +138,8 @@ def hangman():
     incorrect_attempts = 0
     max_attempts = 6
 
-    print("Welcome to Hangman!")
+    player_name = input("Please enter your name: ")
+    print(f"Welcome to Hangman, {player_name}!")
 
     while incorrect_attempts < max_attempts:
         current_display = display_word(word_to_guess, guessed_letters)
@@ -168,11 +169,11 @@ def hangman():
             print("Correct guess!")
 
         if set(guessed_letters) >= set(word_to_guess.upper()):
-            print("Congratulations! You guessed the word:", word_to_guess)
+            print(f"Congratulations, {player_name}! You guessed correrct:", word_to_guess)
             break
 
     if incorrect_attempts == max_attempts:
-        print("Sorry, you ran out of attempts. The word was:", word_to_guess)
+        print(f"Sorry, {player_name}, you ran out of attempts. The word was:", word_to_guess)
 
 
 if __name__ == "__main__":
