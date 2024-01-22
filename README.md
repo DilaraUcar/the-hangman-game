@@ -28,8 +28,18 @@ If the user chooses to play again they are then redirected to enter a name again
 ![play-again](docs/restart.jpeg)
 
 ## Features
-### Existing Features
+- The computer ramdomly selects a word from the words list. The player cannot see this word but is instead presented with underscores for the amount of letters there is in the selected word, and the correct letter inputs.
+
+- The computer accepts user input and gives responsive feedback with input validation and handles error.
+
+- User cannot enter a number, more than one letter, or the same letter twice and will be presented with a responsive feedaback message.
+
 ### Future Features
+- Implementation of a game leaders so the players are saved to an external file and having a score system.
+
+- Have different themes the player can choose from. Right now the theme is only animals.
+
+- Have a difficulity option where the player can choose what level of difficulity they desire.
 
 ## Testing
 
