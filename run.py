@@ -1,6 +1,7 @@
 import random
 from game_art import hangman_graphics, logo, game_over, you_win
 
+
 def get_word():
     """
     Get a random word from the words list
@@ -22,7 +23,6 @@ def get_word():
         "Rabbit",
         "Hamster"
         ]
-        
     return random.choice(words).upper()
 
 
@@ -94,14 +94,16 @@ def hangman():
         # Add space between current_display and incorrect attempts
         print()
 
-        # Find the set of incorrect letters by subtracting the set of uppercase letters
-        # in the guessed letters from the set of uppercase letters in the target word.
+        # Find the set of incorrect letters by subtracting 
+        # the set of uppercase letters
+        # in the guessed letters from the set of uppercase 
+        # letters in the target word.
         incorrect_letters = {letter for letter in guessed_letters} - set(word_to_guess.upper())
         print("Incorrect letters:", ', '.join(incorrect_letters))
 
         # Add space between incorrect letters and guess a letter
         print()
-        
+
         guess = validate_guess(guessed_letters)
 
         if guess is None:
@@ -132,7 +134,8 @@ def hangman():
 
 def play_again():
     """
-    Ask the user if they want to play again, with a while loop that continues the game
+    Ask the user if they want to play again,
+    with a while loop that continues the game
     if the user wants to play again until they enter 'n'.
     """
     while True:
@@ -143,6 +146,7 @@ def play_again():
             return False
         else:
             print("Please enter either 'Y' or 'N'.")
+
 
 while True:
     hangman()
