@@ -22,6 +22,7 @@ The live game can be found [here](https://the-hangman-game-p3-63bab5abcbcf.herok
 ## HOW TO PLAY
 
 ![input-name-validation](docs/name-valid.jpeg)
+
 In this version of the Hangman game, the user needs to put in their name and the game is then generated with a welcome message. 
 
 ![starts game](docs/welcome.jpeg)
